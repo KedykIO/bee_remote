@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+    <style>
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Главная страница</h1>
+
+    <!-- Кнопка 1: переход на другую страницу -->
+    <a href="{% url 'about' %}">
+        <button class="btn">Перейти на About</button>
+    </a>
+
+    <!-- Кнопка 2: отправка формы на сервер -->
+    <form method="POST" action="{% url 'my_action' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn">Отправить на сервер</button>
+    </form>
+
+    <!-- Кнопка 3: JavaScript -->
+    <button class="btn" onclick="jsAction()">Сделать через JS</button>
+
+    <script>
+        function jsAction() {
+            alert('Кнопка сработала через JavaScript!');
+        }
+    </script>
+</body>
+</html>

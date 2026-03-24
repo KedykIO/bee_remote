@@ -1,0 +1,32 @@
+<form method="POST" action="{% url 'submit_form' %}">
+    {% csrf_token %}
+    <input type="hidden" id="plan" name="plan" value="{{ plan }}">
+    <!-- Текстовое поле -->
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" placeholder="Введите имя" required><br><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Введите email" required><br><br>
+
+    <!-- Пароль -->
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" placeholder="Введите пароль" required><br><br>
+
+    <!-- Чекбокс -->
+    <label>
+        <input type="checkbox" name="subscribe"> Подписаться на новости
+    </label><br><br>
+
+    <!-- Радио-кнопки -->
+    <label>Пол:</label>
+    <input type="radio" name="gender" value="male"> Мужской
+    <input type="radio" name="gender" value="female"> Женский<br><br>
+
+    <!-- Текстовая область -->
+    <label for="message">Сообщение:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" placeholder="Ваше сообщение"></textarea><br><br>
+
+    <!-- Кнопка отправки -->
+    <button type="submit" class="btn">Отправить</button>
+</form>
