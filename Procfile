@@ -1,0 +1,1 @@
+web: gunicorn bee_remote_landing.wsgi:application

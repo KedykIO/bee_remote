@@ -23,9 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # URL для статики
 STATIC_URL = '/static/'
+
+# Папка, куда collectstatic будет собирать все файлы
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Исходная сборка React, чтобы collectstatic мог её взять
 STATICFILES_DIRS = [
-    BASE_DIR / "frontend/dist",  # путь к вашей сборке React
+    BASE_DIR / "frontend/dist",
 ]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # для отдачи статики
+    # остальные middleware
+]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -37,7 +50,7 @@ STATICFILES_DIRS = [
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://bee-remote.onrender.com']
 
 
 # Application definition

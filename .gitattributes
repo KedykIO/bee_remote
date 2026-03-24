@@ -1,0 +1,34 @@
+# Все текстовые файлы — автоматически нормализуем
+* text=auto
+
+# Python — всегда LF
+*.py text eol=lf
+
+# HTML, CSS, JS — всегда LF
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# JSON, YAML, Markdown — тоже LF
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+
+# Bash скрипты — LF
+*.sh text eol=lf
+
+# Windows бинарные файлы — не трогать
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# IDE и конфигурации — не трогать
+.idea/* -text
+*.iml -text
+
+# Сборка фронтенда — не трогать
+frontend/dist/* -text
