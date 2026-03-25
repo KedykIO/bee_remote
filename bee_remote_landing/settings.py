@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+from whitenoise import WhiteNoise
 import os
 
 load_dotenv()
