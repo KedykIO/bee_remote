@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bee_remote_landing',
-    'core'
+    'core',
+    'frontend'
 ]
 
 MIDDLEWARE = [
