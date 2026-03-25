@@ -50,7 +50,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['https://bee-remote.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['bee-remote.onrender.com','localhost']
 
 
 # Application definition
